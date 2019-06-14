@@ -18,6 +18,46 @@
 - ⚖️ light-weight while implementing all markdown features from the supported flavors & specifications
 - 🌐 works in a browser, on a server, or from a command line interface (CLI)
 
+## Forked Changes
+
+### Support image size configuration
+
+#### simple width and height
+
+{number}x{number} in the title text part of the link in quotes after the url e.g.
+
+```md
+![](src "1x2 title text")
+or
+![](src "title text 1x2")
+```
+
+generates:
+```html
+<img src="src" alt="" width="1" height="2" title="title text">
+```
+
+#### explicit attributes
+
+any attribute name=value, no quotes around the value e.g.
+
+```md
+![](src "width=1 height=2 align=right title text")
+![](src "width=1px height=2px align=right title text")
+```
+
+generates:
+```html
+<img src="src" alt="" width="1" height="2" align="right" title="title text">
+<img src="src" alt="" width="1px" height="2px" align="right" title="title text">
+```
+
+### baseUrl works on html tag
+
+The original code doesn't apply the `baseUrl` on the relative link in raw html tag such as `<a href="">`, `<img src="">`.
+
+Hack the render function, this will add `baseUrl` just as it dose on markdown image, `![](path/to/image.png)`.
+
 ## Demo
 
 Checkout the [demo page](https://marked.js.org/demo/) to see marked in action ⛹️

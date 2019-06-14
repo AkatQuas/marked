@@ -2491,7 +2491,7 @@
   },
   {
     "markdown": "<a href=\"/bar\\/)\">\n",
-    "html": "<a href=\"/bar\\/)\">\n",
+    "html": "<a href=\"/bar%5C/)\">\n",
     "example": 307,
     "start_line": 5611,
     "end_line": 5615,
@@ -4732,6 +4732,30 @@
     "markdown": "![](/url)\n",
     "html": "<p><img src=\"/url\" alt=\"\" /></p>\n",
     "example": 577,
+    "start_line": 8559,
+    "end_line": 8563,
+    "section": "Images"
+  },
+  {
+    "markdown": "![](/url \"100x100\")\n",
+    "html": "<p><img src=\"/url\" alt=\"\" width=\"100\" height=\"100\" /></p>\n",
+    "example": 577.1,
+    "start_line": 8559,
+    "end_line": 8563,
+    "section": "Images"
+  },
+  {
+    "markdown": "![](/url \"width=100 height=100\")\n",
+    "html": "<p><img src=\"/url\" alt=\"\" width=\"100\" height=\"100\" /></p>\n",
+    "example": 577.2,
+    "start_line": 8559,
+    "end_line": 8563,
+    "section": "Images"
+  },
+  {
+    "markdown": "![](/url \"width=100px height=100px\")\n",
+    "html": "<p><img src=\"/url\" alt=\"\" width=\"100px\" height=\"100px\" /></p>\n",
+    "example": 577.3,
     "start_line": 8559,
     "end_line": 8563,
     "section": "Images"
